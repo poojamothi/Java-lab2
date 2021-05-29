@@ -1,0 +1,38 @@
+//Write a java program to find the prime numbers in a set of numbers .the size of set is given
+
+import java.util.Scanner;
+
+public class Prime {
+	Scanner sc = new Scanner(System.in);
+
+	public Prime(int limit) {
+		int arr[] = new int[limit];
+		System.out.println("Enter Elements :");
+		for (int i = 0; i < arr.length; i++) {
+			arr[i]=sc.nextInt();
+		}
+		System.out.println("Prime Numbers in given set :");
+
+		for (int i = 0; i < arr.length; i++) {
+			boolean isPrime=true;
+			for (int j = 2; j <= arr[i]/2; j++) {
+				if (arr[i]%j==0) {
+					isPrime=false;
+					break;
+				}
+			}
+			if (isPrime) {
+				System.out.print(arr[i]+" ");
+			}
+		}
+	}	
+	
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter no. of elements :"); 
+		int n = sc.nextInt();
+		new Prime(n);
+		
+	}
+}
